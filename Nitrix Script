@@ -1,0 +1,3 @@
+if game.PlaceId == 4773264250 then
+    loadstring(game:HttpGet("https://pastebin.com/raw/01CK1yqP", true))()
+end
