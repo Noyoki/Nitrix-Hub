@@ -1,3 +1,3 @@
 if game.PlaceId == 4773264250 then
-    loadstring(game:HttpGet("https://pastebin.com/raw/01CK1yqP", true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nozxoki/Nitrix-Hub/main/Outbreak%20Script"))()
 end
