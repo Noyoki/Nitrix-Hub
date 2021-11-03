@@ -1,5 +1,13 @@
+local colors = {
+    SchemeColor = Color3.fromRGB(30,30,30),
+    Background = Color3.fromRGB(15, 15, 15),
+    Header = Color3.fromRGB(25, 25, 25),
+    TextColor = Color3.fromRGB(200,200,200),
+    ElementColor = Color3.fromRGB(20, 20, 20)
+}
+
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Nitrix - OutBreak", "Synapse")
+local Window = Library.CreateLib("Nitrix - OutBreak", colors)
 
 -- Main
 local Main = Window:NewTab("Main")
