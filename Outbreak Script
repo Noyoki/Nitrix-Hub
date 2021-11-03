@@ -1,0 +1,59 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Nitrix - OutBreak", "Synapse")
+
+-- Main
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+
+MainSection:NewButton("Give Points", "Gives 500,000 DNA Points", function()
+    local args = {
+        [1] = 500000
+    }
+    game:GetService("ReplicatedStorage").DnaUpdate:FireServer(unpack(args))
+end)
+
+MainSection:NewToggle("Automatically Spread To All Counntries", "Automatically Spreads Bacteria/Viruses/Fungus To All Counntries", function(v)
+    getgenv().autonationspread = v
+    while true do
+        wait()
+        if getgenv().autonationspread == true then
+            local args = {
+                [1] = "ACE"
+            }
+
+            game:GetService("ReplicatedStorage").SpecialAbility:FireServer(unpack(args))
+        end
+    end
+end)
+
+local ResearchSection = Main:NewSection("Research")
+
+ResearchSection:NewButton("Research All Transmissions", "Researches All Transmissions", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/c8muuaqU", true))()
+end)
+
+ResearchSection:NewButton("Research All Symptoms", "Researches All Symptoms", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/zENnCtYU", true))()
+end)
+
+ResearchSection:NewButton("Research All Abilities", "Researches All Abilities", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/JMeLTMDH", true))()
+end)
+
+-- Special
+local Special = Window:NewTab("Special")
+local SpecialSection = Special:NewSection("Farm")
+
+SpecialSection:NewToggle("Win/Cash Farm", "Play the game as normal, last as long as you can once you've won, hopefully you have $1000+ from winning, if so turn on this for a few minutes and let the money flow in.", function(v)
+    getgenv().winfarm = v
+    while true do
+        wait()
+        if getgenv().winfarm == true then
+            local args = {
+                [1] = "Peninsula"
+            }
+
+            game:GetService("ReplicatedStorage").Victory:FireServer(unpack(args))
+        end
+    end
+end)
