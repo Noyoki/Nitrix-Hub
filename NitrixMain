@@ -1,3 +1,9 @@
 if game.PlaceId == 4773264250 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Nozxoki/Nitrix-Hub/main/Outbreak%20Script"))()
+else
+    game.StarterGui:SetCore("SendNotification",  {
+        Title = "Nitrix";
+        Text = "Game Not Supported";
+        Duration = 3;
+        })
 end
