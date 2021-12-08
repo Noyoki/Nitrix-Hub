@@ -1,5 +1,5 @@
-if game.PlaceId == 4773264250 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nozxoki/Nitrix-Hub/main/Outbreak%20Script"))()
+if game.PlaceId == 7256524608 then
+    loadstring(game:HttpGet("https://raw.github.com/Nozxoki/Nitrix-Hub/blob/main/StreamingSimScript"))()
 else
     game.StarterGui:SetCore("SendNotification",  {
         Title = "Nitrix";
