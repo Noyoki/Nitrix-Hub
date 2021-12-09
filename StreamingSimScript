@@ -1,6 +1,6 @@
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 
-local win = DiscordLib:Window("Streaming Simulator")
+local win = DiscordLib:Window("Nitrix - Streaming Simulator")
 
 
 -- Main
