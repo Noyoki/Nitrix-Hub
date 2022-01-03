@@ -1,9 +1,0 @@
-if game.PlaceId == 7256524608 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nozxoki/Nitrix-Hub/main/StreamingSimScript"))()
-else
-    game.StarterGui:SetCore("SendNotification",  {
-        Title = "Nitrix";
-        Text = "Game Not Supported";
-        Duration = 3;
-        })
-end
