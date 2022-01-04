@@ -1,8 +1,6 @@
---local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nozxoki/NitrixUI/main/NitrixUI"))()
+local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/Nozxoki/NitrixUI/main/2-NitrixNotifs.lua"),true))()
 
-local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/Nozxoki/NitrixUI/main/NitrixNotifs.lua"),true))()
-
-local library = loadstring(game:HttpGet("https://pastebin.com/raw/k4VBjceU", true))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nozxoki/NitrixUI/main/1-NitrixUI.lua"))()
 
 -- Variables
 
@@ -14,8 +12,11 @@ getgenv().Combat = false
 
 local Players = game:GetService("Players")
 
+local plrs = game.Players:GetChildren()
+
 local vehiclename = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Model").Name
 
+local mods = {51493240, 34897046, 373957983, 581105449, 74359327, 21747109, 850815168, 951633216, 27773815, 1181494786, 156135790, 7050507, 73678056, 174285325, 24990589, 267418769, 14450955, 53042569, 13575190, 1109747353, 26100209, 35072888, 89431198, 839895444, 1536083, 70261613, 299606569, 82182318, 68966801, 32752221, 400192155, 351255201, 4980144, 32982017, 37893312, 603565, 493677451, 1035874382, 77568345, 44624936, 102979377, 22240648, 24377993, 159615617, 1136818645, 24190452, 370054496, 80916464, 41636124, 8566447, 144608264, 37898748, 163610581, 25675324, 109668388, 41487561, 17938990, 43487387, 186087176, 97104916, 19580261, 31844698, 307920883, 24487068, 122180674, 52542498, 4176720, 42870304, 29099758, 40658655, 63603700}
 
 -- Safe
 
@@ -117,11 +118,6 @@ Unsafe:Button("Toggle Combat", function()
 end)
 
 Unsafe:Button("Instant Repair", function()
-    local args = {
-        [2] = game:GetService("Players").LocalPlayer.Character:FindFirstChild(vehiclename),
-        [3] = "Repair"
-    }
-    
     workspace.GlobalFunctions.WeaponManager:FireServer(null, game:GetService("Players").LocalPlayer.Character:FindFirstChild(vehiclename), "Repair")
 end)
 
@@ -132,6 +128,7 @@ Unsafe:Button("Toggle Inf Repair", function()
             Description = "<b><font color='rgb(255, 255, 255)'>Infinite Repair: </font> <font color='rgb(225, 35, 35)'>Disabled</font></b>",
             Icon = 6023426926
         }
+        game.CoreGui.NitrixUiExtras.StatsUiWindow.Header.Window.InfRepair.Text = "Infinite Repair: Disabled"
         getgenv().InstantRepair = false
     else
         notifications:message{
@@ -139,6 +136,7 @@ Unsafe:Button("Toggle Inf Repair", function()
             Description = "<b><font color='rgb(255, 255, 255)'>Infinite Repair: </font> <font color='rgb(35, 225, 35)'>Enabled</font></b>",
             Icon = 6023426926
         }
+        game.CoreGui.NitrixUiExtras.StatsUiWindow.Header.Window.InfRepair.Text = "Infinite Repair: Enabled"
         getgenv().InstantRepair = true
     end
 end)
@@ -162,11 +160,21 @@ Extra:Button("Anti AFK", function()
             Description = "<b><font color='rgb(255, 255, 255)'>Anti-AFK: </font> <font color='rgb(35, 225, 35)'>Enabled</font></b>",
             Icon = 6023426926
         }
+        
+        game.CoreGui.NitrixUiExtras.StatsUiWindow.Header.Window.AntiAfk.Text = "Anti AFK: Enabled"
     else
         notifications:message{
             Title = "<font color='rgb(255, 255, 255)'><b>Nitrix</b></font>",
             Description = "<font color='rgb(225, 35, 35)'><b>Anti-AFK Already Enabled</b></font>"
         }
+    end
+end)
+
+Extra:Button("Toggle Stats GUI", function()
+    if game.CoreGui.NitrixUiExtras.Enabled == true then
+        game.CoreGui.NitrixUiExtras.Enabled = false
+    else
+        game.CoreGui.NitrixUiExtras.Enabled = true
     end
 end)
 
@@ -178,12 +186,14 @@ Extra:Button("Delete GUI", function()
         Description = "<font color='rgb(35, 225, 35)'><b>GUI Deleted</b></font>"
     }
     
+    game.CoreGui.NitrixUiExtras:Destroy()
+    
     library:Destroy()
 end)
 
 -- Stuff
 
-local mods = {51493240, 34897046, 373957983, 581105449, 74359327, 21747109, 850815168, 951633216, 27773815, 1181494786, 156135790, 7050507, 73678056, 174285325, 24990589, 267418769, 14450955, 53042569, 13575190, 1109747353, 26100209, 35072888, 89431198, 839895444, 1536083, 70261613, 299606569, 82182318, 68966801, 32752221, 400192155, 351255201, 4980144, 32982017, 37893312, 603565, 493677451, 1035874382, 77568345, 44624936, 102979377, 22240648, 24377993, 159615617, 1136818645, 24190452, 370054496, 80916464, 41636124, 8566447, 144608264, 37898748, 163610581, 25675324, 109668388, 41487561, 17938990, 43487387, 186087176, 97104916, 19580261, 31844698, 307920883, 24487068, 122180674, 52542498, 4176720, 42870304, 29099758, 40658655, 63603700}
+--[[
 
 game.Players.PlayerAdded:Connect(function(plr)
 	for i, v in pairs(mods) do
@@ -196,18 +206,31 @@ game.Players.PlayerAdded:Connect(function(plr)
 	end
 end)
 
+]]
+
 notifications:message{
     Title = "<font color='rgb(255, 255, 255)'><b>Nitrix</b></font>",
     Description = "<b><font color='rgb(35, 225, 35)'>GUI Loaded</font></b>"
 }
 
 while true do
+	for i, v in pairs(mods) do
+		if plr.UserId == v then
+            notifications:message{
+                Title = "<font color='rgb(255, 255, 255)'><b>Nitrix Alert!</b></font>",
+                Description = "<b><font color='rgb(225, 35, 35)'>A Moderator has joined the game, be careful!</font></b>"
+            }
+            
+            game.CoreGui.NitrixUiExtras.StatsUiWindow.Header.Window.Mod.Text = "Mods In Game: Yes"
+        else
+            game.CoreGui.NitrixUiExtras.StatsUiWindow.Header.Window.Mod.Text = "Mods In Game: No"
+		end
+	end
+	wait()
+end
+
+while true do
     if getgenv().InstantRepair == true then
-        local args = {
-            [2] = game:GetService("Players").LocalPlayer.Character:FindFirstChild(vehiclename),
-            [3] = "Repair"
-        }
-        
         workspace.GlobalFunctions.WeaponManager:FireServer(null, game:GetService("Players").LocalPlayer.Character:FindFirstChild(vehiclename), "Repair")
     end
     wait()
