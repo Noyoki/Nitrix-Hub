@@ -1,8 +1,8 @@
-###  Supported Games
+#  Supported Games
 
 Neo Warfare X
 
-# Features
+## Features
 
 -- Neo --
 
