@@ -8,17 +8,17 @@ Neo Warfare X
 
 Safe Section:
 
-Extend Radar
-Full Bright
-Remove Clouds
-Remove Textures
+Extend Radar,
+Full Bright,
+Remove Clouds,
+Remove Textures,
 
 Unsafe Section:
 
-Toggle Combat Instantly
-Instant Repair
-Toggle Inf Repair
+Toggle Combat Instantly,
+Instant Repair,
+Toggle Inf Repair,
 
 Extra:
 
-Anti AFK
+Anti AFK,
