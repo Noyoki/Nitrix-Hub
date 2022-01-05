@@ -6,9 +6,7 @@ Neo Warfare X
 
 -- Neo --
 
-
 Safe Section:
-
 
 Extend Radar
 Full Bright
@@ -17,12 +15,10 @@ Remove Textures
 
 Unsafe Section:
 
-
 Toggle Combat Instantly
 Instant Repair
 Toggle Inf Repair
 
 Extra:
-
 
 Anti AFK
