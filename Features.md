@@ -6,6 +6,8 @@ Neo Warfare X
 
 #### -- Neo --
 
+- Mod Join Alert
+
 #### Safe Section:
 
 - Extend Radar
