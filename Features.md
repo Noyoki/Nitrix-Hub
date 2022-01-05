@@ -6,19 +6,19 @@ Neo Warfare X
 
 -- Neo --
 
-- Safe Section:
+#### Safe Section:
 
 - Extend Radar
 - Full Bright
 - Remove Clouds
 - Remove Textures
 
-- Unsafe Section:
+#### Unsafe Section:
 
 - Toggle Combat Instantly
 - Instant Repair
 - Toggle Inf Repair
 
-- Extra:
+#### Extra:
 
-- Anti AFK,
+- Anti AFK
